@@ -1,9 +1,10 @@
+import os
 import uvicorn
-
-def main():
-    print("Starting Mayank Kanth AI Portfolio Backend on http://127.0.0.1:8001 ...")
-    uvicorn.run("backend.main:app", host="127.0.0.1", port=8001, reload=True)
-
+from backend.main import app
 
 if __name__ == "__main__":
-    main()
+    port = int(os.environ.get("PORT", 8001))
+    host = os.environ.get("HOST", "0.0.0.0")
+    print(f"Starting Mayank Kanth AI Portfolio Backend on {host}:{port} ...")
+    uvicorn.run("main:app", host=host, port=port, reload=False)
+
