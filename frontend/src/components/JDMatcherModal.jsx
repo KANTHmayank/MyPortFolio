@@ -3,6 +3,7 @@ import {
   Briefcase, X, Sparkles, CheckCircle, AlertCircle, 
   ArrowRight, Copy, Check, Loader2, Award, Zap 
 } from 'lucide-react';
+import { API_BASE } from '../config';
 
 export default function JDMatcherModal({ isOpen, onClose }) {
   const [sampleJDs, setSampleJDs] = useState({});
@@ -17,7 +18,7 @@ export default function JDMatcherModal({ isOpen, onClose }) {
 
   // Fetch sample JDs on mount
   useEffect(() => {
-    fetch('/api/sample-jds')
+    fetch(`${API_BASE}/api/sample-jds`)
       .then(res => res.json())
       .then(data => {
         setSampleJDs(data);
@@ -57,7 +58,7 @@ export default function JDMatcherModal({ isOpen, onClose }) {
     setResult(null);
 
     try {
-      const response = await fetch('/api/match-jd', {
+      const response = await fetch(`${API_BASE}/api/match-jd`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

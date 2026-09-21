@@ -3,6 +3,7 @@ import {
   X, HelpCircle, ChevronDown, ChevronUp, Bot, 
   Sparkles, ArrowRight, CheckCircle, Search, Filter 
 } from 'lucide-react';
+import { API_BASE } from '../config';
 
 export default function InterviewModal({ isOpen, onClose, onAskQuestionInChat }) {
   const [questionsData, setQuestionsData] = useState(null);
@@ -20,7 +21,7 @@ export default function InterviewModal({ isOpen, onClose, onAskQuestionInChat })
   const fetchInterviewQuestions = async () => {
     try {
       setIsLoading(true);
-      const res = await fetch('/api/interview-questions');
+      const res = await fetch(`${API_BASE}/api/interview-questions`);
       if (res.ok) {
         const data = await res.json();
         setQuestionsData(data);

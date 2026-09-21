@@ -4,6 +4,7 @@ import {
   Loader2, Minimize2, Maximize2, Mic, MicOff, 
   Volume2, Square, Languages 
 } from 'lucide-react';
+import { API_BASE } from '../config';
 
 const SUGGESTIONS_EN = [
   "Can you describe Mayank's PetPuja project and its architecture?",
@@ -212,7 +213,7 @@ export default function ChatModal({ isOpen, onClose, initialQuery }) {
     setIsStreaming(true);
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
