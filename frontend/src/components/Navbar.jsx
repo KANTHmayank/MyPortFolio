@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { 
   Bot, FileText, Sun, Moon, Menu, X, 
   Sparkles, HelpCircle, Briefcase 
@@ -194,8 +195,8 @@ export default function Navbar({ onOpenChat, onOpenJDMatcher, onOpenWhyHire, onO
         </div>
       </div>
 
-      {/* Mobile Drawer Overlay */}
-      {isMobileMenuOpen && (
+      {/* Mobile Drawer Overlay via Portal to document.body */}
+      {isMobileMenuOpen && typeof document !== 'undefined' && createPortal(
         <div 
           className="mobile-menu-backdrop" 
           onClick={() => setIsMobileMenuOpen(false)}
@@ -343,7 +344,8 @@ export default function Navbar({ onOpenChat, onOpenJDMatcher, onOpenWhyHire, onO
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </header>
   );
