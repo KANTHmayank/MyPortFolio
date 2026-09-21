@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <title>Mayank Kanth | Backend & Generative AI Engineer</title>
+    <meta name="description" content="AI Portfolio of Mayank Kanth - Backend & Generative AI Engineer specializing in Java Spring Boot, FastAPI, LangGraph, Groq, and Agentic Systems." />
+    <!-- Typography: Fraunces (italic 500), Work Sans (400/500), JetBrains Mono (700), Manrope (400/500) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500&family=JetBrains+Mono:wght@700&family=Manrope:wght@400;500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Prevent FOUC: Set theme attribute before first paint -->
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

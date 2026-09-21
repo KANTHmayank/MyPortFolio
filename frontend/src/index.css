@@ -1,0 +1,302 @@
+/* ============================================================
+   Dual-Personality Design System
+   Warm/Editorial Light Mode (#F3EFE6) vs. Sharp/Technical Dark Mode (#141311)
+   ============================================================ */
+
+/* Light Mode (Default: Warm Editorial) */
+:root, [data-theme="light"] {
+  --bg-primary: #F3EFE6;
+  --bg-surface: #E8E3D8;
+  --bg-card: rgba(235, 230, 220, 0.85);
+  --bg-card-hover: rgba(228, 222, 211, 0.95);
+  --bg-input: #EAE4D8;
+  
+  --border-subtle: rgba(36, 31, 25, 0.12);
+  --border-card: rgba(122, 92, 46, 0.22);
+  --border-focus: #7A5C2E;
+  
+  --text-primary: #241F19;
+  --text-secondary: #5C5346;
+  --text-muted: #8C8272;
+  --accent: #7A5C2E;
+  --accent-hover: #5E4622;
+  --accent-subtle: rgba(122, 92, 46, 0.1);
+
+  /* Typography: Fraunces (italic 500) & Work Sans (400/500) */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-display-weight: 500;
+  --font-display-style: italic;
+  
+  --font-body: 'Work Sans', -apple-system, sans-serif;
+  --font-body-weight: 400;
+  --font-body-medium: 500;
+  
+  --font-nav: 'Work Sans', sans-serif;
+  --font-nav-weight: 500;
+  --font-nav-letter-spacing: normal;
+  --font-nav-transform: none;
+
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Buttons: Fully rounded pill shape */
+  --btn-radius: 999px;
+  --btn-primary-bg: #241F19;
+  --btn-primary-text: #F3EFE6;
+  --btn-primary-hover-bg: #3D352B;
+  
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: #7A5C2E;
+  --btn-secondary-text: #241F19;
+  --btn-secondary-hover-bg: rgba(122, 92, 46, 0.08);
+
+  /* Badges: Pill-outline style, 1px solid accent, transparent bg, sentence case */
+  --badge-radius: 999px;
+  --badge-border: 1px solid #7A5C2E;
+  --badge-bg: transparent;
+  --badge-text: #7A5C2E;
+  --badge-transform: none;
+
+  /* Card & Window Shape */
+  --card-radius: 18px;
+  --window-radius: 18px;
+  --shadow-card: 0 10px 30px rgba(36, 31, 25, 0.06);
+  --shadow-glow: 0 0 25px rgba(122, 92, 46, 0.15);
+}
+
+/* Dark Mode: Sharp Technical Terminal */
+[data-theme="dark"] {
+  --bg-primary: #141311;
+  --bg-surface: #1C1A17;
+  --bg-card: rgba(26, 24, 21, 0.88);
+  --bg-card-hover: rgba(34, 31, 27, 0.96);
+  --bg-input: #1A1916;
+  
+  --border-subtle: rgba(237, 235, 228, 0.12);
+  --border-card: rgba(232, 197, 71, 0.25);
+  --border-focus: #E8C547;
+  
+  --text-primary: #EDEBE4;
+  --text-secondary: #B0ADA3;
+  --text-muted: #757269;
+  --accent: #E8C547;
+  --accent-hover: #F2D568;
+  --accent-subtle: rgba(232, 197, 71, 0.12);
+
+  /* Typography: JetBrains Mono (700) & Manrope (400/500) */
+  --font-display: 'JetBrains Mono', monospace;
+  --font-display-weight: 700;
+  --font-display-style: normal;
+  
+  --font-body: 'Manrope', -apple-system, sans-serif;
+  --font-body-weight: 400;
+  --font-body-medium: 500;
+  
+  --font-nav: 'JetBrains Mono', monospace;
+  --font-nav-weight: 700;
+  --font-nav-letter-spacing: -0.02em;
+  --font-nav-transform: none;
+
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Buttons: Sharp corners (0px) */
+  --btn-radius: 0px;
+  --btn-primary-bg: #E8C547;
+  --btn-primary-text: #141311;
+  --btn-primary-hover-bg: #F2D568;
+  
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: #E8C547;
+  --btn-secondary-text: #EDEBE4;
+  --btn-secondary-hover-bg: rgba(232, 197, 71, 0.1);
+
+  /* Badges: Dashed 1px border, 0px radius, lowercase copy */
+  --badge-radius: 0px;
+  --badge-border: 1px dashed #E8C547;
+  --badge-bg: transparent;
+  --badge-text: #E8C547;
+  --badge-transform: lowercase;
+
+  /* Card & Window Shape */
+  --card-radius: 0px;
+  --window-radius: 0px;
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 25px rgba(232, 197, 71, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Smooth color transitions without transitioning font-family or border-radius */
+body, header, nav, main, section, div, p, span, h1, h2, h3, h4, h5, h6, a, button, input, textarea {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: var(--font-body-weight);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Keyboard Focus Accessibility (WCAG AA) */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Headings (Display Font) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-display-weight);
+  font-style: var(--font-display-style);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.gradient-text {
+  color: var(--accent);
+  display: inline-block;
+}
+
+/* Glass & Card Panels */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-card);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-card);
+}
+
+.glass-panel:hover {
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-nav);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 11px 22px;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+.btn-primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border-color: var(--btn-primary-bg);
+}
+
+.btn-primary:hover {
+  background: var(--btn-primary-hover-bg);
+  border-color: var(--btn-primary-hover-bg);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border-color: var(--btn-secondary-border);
+}
+
+.btn-secondary:hover {
+  background: var(--btn-secondary-hover-bg);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 7px 15px;
+  font-size: 0.85rem;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: var(--badge-radius);
+  border: var(--badge-border);
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  text-transform: var(--badge-transform);
+  line-height: 1;
+}
+
+.badge-pulse {
+  border: var(--badge-border);
+  color: var(--accent);
+}
+
+.badge-pulse .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulse-dot 1.8s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.badge-tech {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 4px 9px;
+  border-radius: var(--badge-radius);
+  border: var(--badge-border);
+  color: var(--badge-text);
+  background: var(--badge-bg);
+  text-transform: var(--badge-transform);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: var(--btn-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
