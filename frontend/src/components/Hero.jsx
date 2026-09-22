@@ -52,10 +52,11 @@ export default function Hero({ onOpenChat }) {
         </button>
 
         <a 
-          href="/Mayank_Resume__.pdf" 
-          download="Mayank_Kanth_Resume.pdf" 
+          href="/Mayank_Resume_AI.pdf" 
+          download="Mayank_Kanth_AI_Resume.pdf" 
           className="btn btn-secondary"
           id="btn-hero-resume"
+          title="Download Mayank's Verified AI/GenAI Resume PDF"
         >
           <FileText size={18} />
           <span>Resume PDF</span>

@@ -51,9 +51,9 @@ export default function WhyHireModal({ isOpen, onClose, onOpenChatWithQuery }) {
       title: "Cutting-Edge Generative AI & Agentic Systems",
       subtitle: "LangGraph Multi-Agent Workflows & Sub-Second Groq LPUs",
       items: [
-        "Architected PetPuja: Multi-agent food ordering system with stateful graphs, Human-in-the-Loop (HITL) interrupt() workflows, and MemorySaver state serialization.",
-        "Implemented resilient multi-model fallback cascades preventing 429 rate limit outages during high-load traffic surges.",
-        "Engineered strict boundary separation between probabilistic LLM reasoning and deterministic transactional execution (payments, orders)."
+        "Architected PetPuja (solo flagship agent): Multi-agent dining orchestrator with stateful graphs, Human-in-the-Loop (HITL) interrupt() workflows, and MemorySaver state checkpointer.",
+        "Built the Autonomous Candidate AI Copilot platform: FastAPI + Groq streaming SSE (<300ms TTFT), sliding-window memory, and multimodal Web Speech STT/TTS.",
+        "Engineered RAG-based systems at Quy Technology using LangChain and AstraDB vector search for real-time document retrieval and AI assistants."
       ],
       chatPrompt: "Explain how Mayank implements Human-in-the-Loop (HITL) workflows and fallback cascades in LangGraph."
     },

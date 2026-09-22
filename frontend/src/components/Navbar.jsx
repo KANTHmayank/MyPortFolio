@@ -124,11 +124,11 @@ export default function Navbar({ onOpenChat, onOpenJDMatcher, onOpenWhyHire, onO
           {/* Desktop Only Actions */}
           <div className="navbar-desktop-actions">
             <a 
-              href="/Mayank_Resume__.pdf" 
-              download="Mayank_Kanth_Resume.pdf" 
+              href="/Mayank_Resume_AI.pdf" 
+              download="Mayank_Kanth_AI_Resume.pdf" 
               className="btn btn-secondary btn-sm"
               id="btn-download-resume"
-              title="Download Mayank's Verified Resume PDF"
+              title="Download Mayank's Verified AI/GenAI Resume PDF"
             >
               <FileText size={15} />
               <span>Resume</span>
@@ -301,8 +301,8 @@ export default function Navbar({ onOpenChat, onOpenJDMatcher, onOpenWhyHire, onO
             {/* Actions & Social */}
             <div className="mobile-drawer-section mobile-drawer-footer">
               <a 
-                href="/Mayank_Resume__.pdf" 
-                download="Mayank_Kanth_Resume.pdf" 
+                href="/Mayank_Resume_AI.pdf" 
+                download="Mayank_Kanth_AI_Resume.pdf" 
                 className="btn btn-primary mobile-resume-btn"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

@@ -268,6 +268,19 @@ def get_interview_questions():
                     "Standardized CI/CD test gates requiring 100% passing unit and integration suites before automated deployment."
                 ],
                 "sample_query": "How did Mayank maintain 99.9% uptime and cut MTTR by 35% across microservices?"
+            },
+            {
+                "id": "iq-6",
+                "category": "LangGraph & Agentic AI",
+                "difficulty": "Medium",
+                "question": "How did you design RAG-based systems and vector search pipelines using LangChain and AstraDB at Quy Technology?",
+                "focus": "Document retrieval, semantic chunking, vector indexing, prompt context grounding",
+                "key_points": [
+                    "Engineered semantic text chunking with sliding overlap to preserve conversational and domain context without splitting key entities.",
+                    "Configured vector embeddings and high-performance vector indexing in AstraDB for sub-second semantic retrieval.",
+                    "Designed strict prompt injection defenses and context-grounded prompt templates preventing hallucinated hotel booking data."
+                ],
+                "sample_query": "How did Mayank design RAG pipelines and vector search at Quy Technology?"
             }
         ]
     }

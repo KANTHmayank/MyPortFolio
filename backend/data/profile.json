@@ -25,6 +25,7 @@
     "databases": ["MySQL", "Relational Database Tuning & Indexing", "Vector Databases (AstraDB, Qdrant)"],
     "cloud_devops": ["AWS (EC2, S3, ELB)", "Kafka", "Redis", "Git", "GitHub", "Jenkins", "CI/CD"],
     "tools_observability": ["Postman", "Splunk", "Distributed Tracing"],
+    "ai_assistants": ["Claude Code", "AntiGravity"],
     "core_concepts": ["Object-Oriented Programming (OOP)", "Data Structures & Algorithms (DSA - 150+ LeetCode problems solved across arrays, stacks, queues, linked lists, trees, and dynamic programming)", "System Design (HLD)"]
   },
   "work_experience": [
@@ -68,6 +69,21 @@
         "Architected an autonomous dining agent using LangGraph, FastAPI, and Groq, cleanly separating probabilistic LLM intent classification from deterministic backend nodes (order validation, cooking, serving, and inventory mutations).",
         "Implemented Human-in-the-Loop (HITL) transactional workflows using LangGraph's interrupt() primitive and MemorySaver checkpointer, enabling pre-confirmation order modifications, proactive culinary pairing suggestions, and dynamic piece-level pricing arithmetic for multi-item portions.",
         "Engineered a self-healing fault-tolerant execution graph with per-item retry tracking, automated receipt deductions ($0.00 charged) for partial kitchen fulfillments, and a multi-model fallback cascade to eliminate rate-limit downtime."
+      ]
+    },
+    {
+      "name": "Autonomous Candidate AI Copilot & Full-Stack Platform",
+      "date": "Sep 2026",
+      "links": {
+        "github": "https://github.com/KANTHmayank/MyPortFolio",
+        "live_demo": "https://mayankkanth.vercel.app/"
+      },
+      "technologies": ["Python", "FastAPI", "React 18", "Groq (GPT-OSS-20B)", "SSE Streaming", "Web Speech API", "Railway", "Vercel"],
+      "description": "Production full-stack GenAI platform featuring an autonomous Copilot with real-time SSE streaming, candidate grounding, multimodal voice STT/TTS, and automated JD fit analysis.",
+      "key_highlights": [
+        "Architected a production full-stack GenAI platform featuring an autonomous Copilot powered by FastAPI and Groq, engineering real-time Server-Sent Events (SSE) streaming to achieve <300ms time-to-first-token (TTFT) with zero-hallucination candidate grounding.",
+        "Engineered production-grade security & reliability by implementing sliding-window conversational memory, IP-based rate limiting, and robust prompt-injection defenses; deployed with automated CI/CD across Railway and Vercel with 99.9% uptime.",
+        "Built multimodal client capabilities in React 18, integrating hands-free Voice STT/TTS (Web Speech API), bilingual English/Hindi localization, and an automated Job Description Fit Matcher for real-time skills gap analysis."
       ]
     },
     {

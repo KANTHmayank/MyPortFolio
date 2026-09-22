@@ -62,6 +62,7 @@ class SkillSet(BaseModel):
     databases: List[str] = Field(default_factory=list)
     cloud_devops: List[str] = Field(default_factory=list)
     tools_observability: List[str] = Field(default_factory=list)
+    ai_assistants: List[str] = Field(default_factory=list)
     core_concepts: List[str] = Field(default_factory=list)
 
 

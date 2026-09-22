@@ -24,9 +24,9 @@ export default function SkillsSection() {
       skills: ["AWS (EC2, S3, ELB)", "Kafka", "Redis", "Git", "GitHub", "Jenkins CI/CD", "Docker"]
     },
     {
-      title: "Observability & Developer Tools",
+      title: "AI Assistants & Developer Tooling",
       icon: <Terminal size={20} className="cat-icon icon-amber" />,
-      skills: ["Postman", "Splunk", "Distributed Tracing", "API Payload Validation", "cURL", "Swagger / OpenAPI"]
+      skills: ["Claude Code", "AntiGravity", "Postman", "Splunk", "Distributed Tracing", "API Payload Validation", "Git / GitHub", "Swagger / OpenAPI"]
     },
     {
       title: "Core Engineering Principles",
