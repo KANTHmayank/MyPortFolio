@@ -148,21 +148,22 @@ npm run dev
 
 ## 🌐 Deployment Guide
 
-### Deploying the Backend (Render / Koyeb)
+### Option 1: All-in-One Vercel Deployment (Frontend + Serverless FastAPI API)
 1. Push this repository to GitHub.
-2. Link your repository in [Render](https://render.com/).
-3. Render will automatically detect `render.yaml`:
+2. In [Vercel](https://vercel.com/), import the repository (ensure **Root Directory** is set to `./` or project root, not `frontend`).
+3. In **Project Settings -> Environment Variables**, configure:
+   * `GROQ_API_KEY`: *[Your Groq API Key]*
+   * `GROQ_MODEL`: `openai/gpt-oss-20b` *(optional, default)*
+4. Click **Deploy**. Vercel will build the React Vite frontend and serve the Python FastAPI endpoints through serverless functions at `/api/*` with zero configuration.
+
+### Option 2: Deploying Backend to Render & Frontend to Vercel
+1. Link your repository in [Render](https://render.com/).
+2. Render will automatically detect `render.yaml`:
    * Build command: `pip install -r requirements.txt`
    * Start command: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
-4. Set the environment variable in Render Dashboard:
+3. Set the environment variable in Render Dashboard:
    * `GROQ_API_KEY`: *[Your Secret Key]*
-
-### Deploying the Frontend (Vercel)
-1. In [Vercel](https://vercel.com/), import the repository and set the Root Directory to `frontend`.
-2. Framework Preset: **Vite**.
-3. In Project Settings -> Environment Variables, configure:
-   * `VITE_API_BASE_URL`: URL of your deployed Render backend.
-4. Click **Deploy**.
+4. In [Vercel](https://vercel.com/), set `VITE_API_BASE_URL` in Environment Variables to your Render backend URL.
 
 ---
 

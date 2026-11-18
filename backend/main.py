@@ -69,6 +69,8 @@ class ChatRequest(BaseModel):
 
 
 @app.get("/")
+@app.get("/api")
+@app.get("/api/")
 def root():
     return {
         "candidate": "Mayank Kanth",
