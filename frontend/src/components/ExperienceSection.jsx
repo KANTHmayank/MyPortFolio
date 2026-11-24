@@ -17,7 +17,7 @@ export default function ExperienceSection() {
           icon: <Zap size={18} className="metric-icon metric-purple" />,
           value: "~28%",
           label: "API Latency Reduction",
-          subtext: "Spring Boot microservices async decoupling"
+          subtext: "Distributed microservices & REST API tuning"
         },
         {
           icon: <Database size={18} className="metric-icon metric-cyan" />,
@@ -39,12 +39,13 @@ export default function ExperienceSection() {
         }
       ],
       highlights: [
-        "Optimized core business logic and RESTful endpoints across distributed Spring Boot microservices, resolving 50+ critical production defects and reducing average API latency by ~28%.",
-        "Engineered and tuned complex SQL queries and indexing strategies across multi-million-row relational databases, accelerating query execution times by ~40% and resolving downstream data inconsistencies.",
-        "Diagnosed and resolved end-to-end integration bottlenecks across 12+ microservices using distributed tracing and API payload validation (Postman, Splunk), slashing MTTR by ~35%.",
-        "Collaborated in an Agile CI/CD environment (Git, Jenkins) to deliver bi-weekly production releases and critical zero-downtime hotfixes, maintaining 99.9% system uptime."
+        "Resolved 50+ critical production defects across a distributed microservices backend and optimized REST API logic, reducing average response latency by ~28%.",
+        "Tuned SQL queries and indexes on multi-million-row tables, improving query execution times by ~40% and eliminating downstream data inconsistencies.",
+        "Traced and resolved integration issues across microservices using distributed tracing, Splunk, and Postman, reducing MTTR by ~35%.",
+        "Shipped bi-weekly releases and urgent hotfixes with DevOps and QA through a Git and Jenkins CI/CD pipeline, maintaining 99.9% system uptime.",
+        "Used Claude Code daily for debugging, code analysis, and code generation to speed up defect diagnosis and understand unfamiliar modules."
       ],
-      skills: ["Spring Boot", "Java", "MySQL", "REST APIs", "Postman", "Splunk", "Git", "Jenkins", "Microservices"]
+      skills: ["Java", "Microservices", "REST APIs", "MySQL", "Postman", "Splunk", "Distributed Tracing", "Git", "Jenkins", "Claude Code"]
     },
     {
       company: "Quy Technology Pvt. Ltd.",

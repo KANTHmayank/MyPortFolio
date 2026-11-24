@@ -38,7 +38,7 @@ export default function InterviewModal({ isOpen, onClose, onAskQuestionInChat })
   const categories = questionsData?.categories || [
     "All",
     "LangGraph & Agentic AI",
-    "Spring Boot & Backend Microservices",
+    "Backend & Distributed Systems",
     "System Design & Resilience"
   ];
 
@@ -79,7 +79,7 @@ export default function InterviewModal({ isOpen, onClose, onAskQuestionInChat })
               Technical & Architecture <span className="gradient-text">Interview Prep</span>
             </h2>
             <p className="interview-sub">
-              Realistic technical and architectural interview questions based on Mayank's verified engineering projects (including PetPuja, distributed microservices refactoring, and AI pipelines). Click any question to see the model answer guidelines or test Mayank's AI Copilot live.
+              Realistic technical and architectural interview questions based on Mayank's verified engineering projects (including KahinPAY, PetPuja, distributed microservices refactoring, and AI pipelines). Click any question to see the model answer guidelines or test Mayank's AI Copilot live.
             </p>
           </div>
           <button 

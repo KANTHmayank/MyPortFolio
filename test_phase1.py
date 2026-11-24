@@ -19,7 +19,7 @@ def test_profile_schema():
     profile = get_profile()
     assert profile.personal.name == "Mayank Kanth", "Candidate name mismatch"
     assert len(profile.work_experience) == 2, "Expected 2 work experiences"
-    assert len(profile.projects) == 3, "Expected 3 projects"
+    assert len(profile.projects) >= 4, "Expected at least 4 projects"
     assert profile.personal.social_links.github is not None, "GitHub link missing"
     assert profile.personal.social_links.linkedin is not None, "LinkedIn link missing"
     print(f"Candidate: {profile.personal.name}")

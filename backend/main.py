@@ -16,6 +16,7 @@ from slowapi.errors import RateLimitExceeded
 
 from backend.schema import CandidateProfile
 from backend.agent import get_profile, stream_candidate, ask_candidate, DEFAULT_MODEL
+from backend.leetcode import get_leetcode_summary
 from backend.matcher import (
     JDMatchRequest,
     JDMatchResponse,
@@ -104,6 +105,12 @@ def get_sample_job_descriptions():
     return SAMPLE_JOB_DESCRIPTIONS
 
 
+@app.get("/api/leetcode")
+def get_leetcode_stats():
+    """Returns Mayank's live (cached) LeetCode statistics, preferred DSA topics, and recent solved problems."""
+    return get_leetcode_summary()
+
+
 @app.get("/api/why-hire")
 def get_why_hire_data():
     """
@@ -111,34 +118,37 @@ def get_why_hire_data():
     for engineering hiring managers and recruiters.
     """
     profile = get_profile()
+    lc = get_leetcode_summary()
+    diff = lc.get("difficulty_breakdown", {})
+    top_topics = ", ".join(t["topic"] for t in lc.get("top_topics", [])[:5])
     return {
         "headline": "Why Mayank Kanth is an Exceptional Backend & GenAI Engineer",
-        "summary": "Mayank bridges the high-demand gap between enterprise-grade backend reliability (Java/Spring Boot, 99.9% uptime, ~28% latency cut at Cognizant) and modern autonomous AI agent architectures (LangGraph, FastAPI, Groq LPUs).",
+        "summary": "Mayank bridges enterprise backend engineering (1+ year tuning SQL and debugging distributed microservices at Cognizant, plus Java 17/Spring Boot & Redis idempotency in KahinPAY) with modern autonomous GenAI architectures (LangGraph, FastAPI, RAG, Groq LPUs).",
         "metrics": [
             {
                 "label": "API Latency Reduction",
                 "value": "~28%",
-                "context": "Refactored Spring Boot microservices & decoupled synchronous bottlenecks at Cognizant"
+                "context": "Resolved 50+ production defects & optimized REST API logic across distributed microservices at Cognizant"
             },
             {
                 "label": "SQL Query Boost",
                 "value": "~40%",
-                "context": "Tuned composite indexes & execution plans on high-volume production tables"
+                "context": "Tuned SQL queries & composite indexes on multi-million-row production tables"
             },
             {
                 "label": "MTTR Decrease",
                 "value": "~35%",
-                "context": "Implemented distributed tracing across 12+ microservices for rapid root cause diagnosis"
+                "context": "Traced integration failures across microservices using distributed tracing, Splunk, and Postman"
             },
             {
                 "label": "Production Uptime",
                 "value": "99.9%",
-                "context": "Zero-downtime releases and resilient fault isolation via automated CI/CD"
+                "context": "Bi-weekly releases & urgent zero-downtime hotfixes via Git & Jenkins CI/CD"
             },
             {
                 "label": "LeetCode Problems",
-                "value": "150+",
-                "context": "Solved 150+ problems spanning arrays, stacks, queues, linked lists to trees and dynamic programming"
+                "value": f"{lc.get('total_solved', 176)}+",
+                "context": f"Easy: {diff.get('Easy', 54)}, Medium: {diff.get('Medium', 101)}, Hard: {diff.get('Hard', 21)} • Top topics: {top_topics}"
             },
             {
                 "label": "Academic Foundation",
@@ -150,39 +160,39 @@ def get_why_hire_data():
             {
                 "id": "velocity",
                 "title": "Immediate Production Velocity",
-                "subtitle": "Enterprise Java, Spring Boot & Scalable Microservices",
+                "subtitle": "Distributed Microservices, SQL Tuning & Java/Spring Boot",
                 "badge": "Proven Enterprise Experience",
                 "points": [
-                    "Over 1 year of hands-on production engineering at Cognizant building robust RESTful microservices, API gateways, and distributed services.",
-                    "Demonstrated performance engineering: delivered a ~28% latency reduction through asynchronous execution and HikariCP connection pool tuning.",
-                    "Production discipline: Docker containerization, CI/CD automated test gates, and continuous 99.9% service reliability."
+                    "1+ year of hands-on production engineering at Cognizant resolving 50+ defects across a distributed microservices backend (~28% latency cut, ~40% SQL boost, ~35% MTTR drop).",
+                    "Architected KahinPAY: an offline-first distributed UPI payment engine (Java 17, Spring Boot, Redis) with simulated BLE epidemic gossip, ECDSA + hybrid RSA-2048/AES-256-GCM encryption, and Redis SETNX idempotent settlement.",
+                    "Production discipline: Docker containerization, Git/Jenkins CI/CD releases, 99.9% reliability, and daily AI-assisted velocity with Claude Code."
                 ]
             },
             {
                 "id": "genai",
                 "title": "Cutting-Edge Generative AI Specialization",
-                "subtitle": "LangGraph Stateful Agents & Sub-Second Groq LPUs",
+                "subtitle": "LangGraph Stateful Agents, RAG Pipelines & FastAPI",
                 "badge": "Next-Gen AI Engineering",
                 "points": [
-                    "Architected PetPuja: Multi-agent food ordering system with stateful graphs, Human-in-the-Loop (HITL) interrupt() checkpoints, and MemorySaver state serialization.",
-                    "Engineered multi-model fallback cascades preventing 429 rate limit outages during high-load traffic surges.",
-                    "Strict boundary separation between probabilistic LLM reasoning and deterministic transactional execution (payments, orders)."
+                    "Architected PetPuja: autonomous AI dining agent with LangGraph stateful graphs, Human-in-the-Loop (HITL) interrupt() checkpoints, MemorySaver state serialization, and multi-model fallbacks.",
+                    "Built the Autonomous Candidate AI Copilot platform: FastAPI + Groq SSE streaming (~300ms TTFT), sliding-window memory, prompt injection defenses, and React 18 multimodal voice/JD matcher.",
+                    "Built RAG pipelines and a Hotel Booking AI Assistant at Quy Technology using LangChain, AstraDB vector search, and FastAPI inference services."
                 ]
             },
             {
                 "id": "fundamentals",
                 "title": "Rigorous Problem Solving & Ownership",
                 "subtitle": "Algorithmic Precision & Fast Architectural Mastery",
-                "badge": "Top 10% Fundamentals",
+                "badge": "Top Fundamentals",
                 "points": [
-                    "150+ problems solved on LeetCode covering arrays, stacks, queues, linked lists, trees, and dynamic programming.",
+                    f"{lc.get('total_solved', 176)}+ LeetCode problems solved ({diff.get('Medium', 101)} Medium, {diff.get('Hard', 21)} Hard) across {top_topics or 'Arrays, Binary Search, DP, and Graphs'}.",
                     "8.47 CGPA in B.Tech Computer Science & Engineering demonstrating solid analytical foundations and disciplined execution.",
                     "High engineering hygiene: writes Pydantic validation schemas, clean documentation, and observable telemetry."
                 ]
             }
         ],
         "executive_pitch": (
-            "If your team needs an engineer who can hit the ground running on distributed Spring Boot or Python backends today, "
+            "If your team needs an engineer who can hit the ground running on distributed microservices, SQL tuning, and Java/Python backends today, "
             "while architecting autonomous, resilient AI agent workflows tomorrow, Mayank Kanth brings immediate production velocity, "
             "deep technical ownership, and verified engineering results."
         ),
@@ -202,7 +212,7 @@ def get_interview_questions():
         "categories": [
             "All",
             "LangGraph & Agentic AI",
-            "Spring Boot & Backend Microservices",
+            "Backend & Distributed Systems",
             "System Design & Resilience"
         ],
         "questions": [
@@ -234,27 +244,27 @@ def get_interview_questions():
             },
             {
                 "id": "iq-3",
-                "category": "Spring Boot & Backend Microservices",
+                "category": "Backend & Distributed Systems",
                 "difficulty": "Hard",
-                "question": "How did you achieve a ~28% reduction in API latency across distributed Spring Boot microservices?",
-                "focus": "Microservices profiling, async task delegation, connection pool tuning",
+                "question": "How did you achieve a ~28% reduction in API latency across a distributed microservices backend at Cognizant?",
+                "focus": "Microservices profiling, REST API optimization, async delegation, connection pool tuning",
                 "key_points": [
-                    "Identified latency bottlenecks through APM distributed tracing, isolating slow database lookups and synchronous downstream calls.",
-                    "Decoupled non-critical paths (audit logging, notification dispatch, metrics aggregation) into asynchronous background tasks using @Async and CompletableFuture.",
-                    "Optimized HikariCP connection pool configurations and replaced bloated JPA entity object graph queries with lightweight DTO projections."
+                    "Identified latency bottlenecks through distributed tracing, Splunk logs, and Postman payload profiling across microservices.",
+                    "Refactored core REST API business logic and decoupled non-critical paths into asynchronous background tasks.",
+                    "Eliminated redundant downstream calls and tightened database connection and payload handling while resolving 50+ production defects."
                 ],
-                "sample_query": "Walk me through how Mayank achieved a 28% latency reduction in his Spring Boot microservices project."
+                "sample_query": "Walk me through how Mayank achieved a 28% latency reduction across distributed microservices at Cognizant."
             },
             {
                 "id": "iq-4",
-                "category": "Spring Boot & Backend Microservices",
+                "category": "Backend & Distributed Systems",
                 "difficulty": "Medium",
-                "question": "What techniques did you apply to accelerate SQL execution by ~40% on production databases?",
+                "question": "What techniques did you apply to accelerate SQL execution by ~40% on multi-million-row production tables?",
                 "focus": "Database indexing, query execution plan analysis, eliminating N+1 bottlenecks",
                 "key_points": [
                     "Analyzed query execution plans using EXPLAIN ANALYZE to identify sequential full-table scans on high-cardinality columns.",
                     "Designed composite and covering indexes tailored specifically to frequent JOIN and WHERE query predicates.",
-                    "Eliminated Hibernate N+1 query traps by using explicit JOIN FETCH and batch loading strategies."
+                    "Eliminated N+1 query patterns and unnecessary column scans to stabilize downstream service consistency."
                 ],
                 "sample_query": "How did Mayank optimize SQL queries to achieve a 40% execution boost in production databases?"
             },
@@ -283,6 +293,19 @@ def get_interview_questions():
                     "Designed strict prompt injection defenses and context-grounded prompt templates preventing hallucinated hotel booking data."
                 ],
                 "sample_query": "How did Mayank design RAG pipelines and vector search at Quy Technology?"
+            },
+            {
+                "id": "iq-7",
+                "category": "System Design & Resilience",
+                "difficulty": "Hard",
+                "question": "In KahinPAY, how do you prevent replay attacks, payload tampering, and duplicate settlements when transactions hop across an untrusted BLE mesh?",
+                "focus": "ECDSA signatures, hybrid RSA-2048 + AES-256-GCM encryption, Redis SETNX idempotency",
+                "key_points": [
+                    "Client-side ECDSA (secp256r1) signatures authenticate the sender and guarantee payload integrity before any BLE mesh hop.",
+                    "Hybrid RSA-2048 + AES-256-GCM encryption keeps transaction payloads confidential so intermediary relay devices cannot read or spoof data.",
+                    "The backend settlement engine uses Redis atomic operations (SETNX with 24h TTL) and an in-memory fallback to guarantee idempotent settlement and block replay attacks."
+                ],
+                "sample_query": "Explain KahinPAY's architecture: how does it secure offline BLE gossip transactions and enforce idempotent settlement with Redis?"
             }
         ]
     }

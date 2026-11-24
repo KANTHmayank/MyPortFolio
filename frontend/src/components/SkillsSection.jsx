@@ -11,12 +11,12 @@ export default function SkillsSection() {
     {
       title: "Backend & Microservices",
       icon: <Server size={20} className="cat-icon icon-indigo" />,
-      skills: ["Java", "Spring Boot", "FastAPI", "Spring MVC", "RESTful APIs", "Microservices Architecture", "Async Processing", "High Concurrency"]
+      skills: ["Java", "Spring Boot", "FastAPI", "Spring MVC", "RESTful APIs", "SSE Streaming", "Microservices Architecture", "Async Processing"]
     },
     {
       title: "Databases & Vector Stores",
       icon: <Database size={20} className="cat-icon icon-cyan" />,
-      skills: ["MySQL", "SQL Indexing & Tuning", "Multi-Million Row DBs", "Vector Databases", "AstraDB", "Qdrant"]
+      skills: ["MySQL", "PostgreSQL", "Redis", "SQL Indexing & Tuning", "Vector Databases", "AstraDB", "Qdrant", "ChromaDB"]
     },
     {
       title: "Cloud, DevOps & Messaging",
@@ -29,9 +29,9 @@ export default function SkillsSection() {
       skills: ["Claude Code", "AntiGravity", "Postman", "Splunk", "Distributed Tracing", "API Payload Validation", "Git / GitHub", "Swagger / OpenAPI"]
     },
     {
-      title: "Core Engineering Principles",
+      title: "Core Engineering & Security",
       icon: <Code2 size={20} className="cat-icon icon-rose" />,
-      skills: ["Object-Oriented Programming (OOP)", "Data Structures & Algorithms (DSA)", "High-Level System Design (HLD)", "Fault-Tolerant Patterns"]
+      skills: ["OOP", "DSA (150+ LeetCode)", "System Design (HLD)", "ECDSA (secp256r1)", "RSA-2048", "AES-256-GCM", "Fault-Tolerant Patterns"]
     }
   ];
 

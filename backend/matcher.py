@@ -93,9 +93,9 @@ Analyze the requirements objectively and return ONLY a valid JSON object matchin
   "verdict": "<Short string: 'Exceptional Match' (85-100), 'Strong Match' (70-84), 'Good Match' (55-69), or 'Moderate Fit' (<55)>",
   "matched_skills": ["<List of specific technologies and skills required by the JD that Mayank possesses>"],
   "missing_or_growth_skills": ["<List of requirements in the JD that are not explicitly listed in Mayank's profile>"],
-  "key_strengths": ["<2 to 4 bullet points highlighting Mayank's relevant production achievements, metrics, or projects (e.g. PetPuja, 28% latency reduction, LangGraph HITL)>"],
+  "key_strengths": ["<2 to 4 bullet points highlighting Mayank's relevant production achievements, metrics, or projects (e.g. KahinPAY, PetPuja, 28% latency reduction across distributed microservices, LangGraph HITL)>"],
   "recommendation": "<Direct, professional recommendation explaining whether and why this candidate should be interviewed>",
-  "tailored_pitch": "<2-3 sentence elevator pitch connecting Mayank's unique blend of Spring Boot backend reliability and cutting-edge GenAI agent engineering to this specific role>"
+  "tailored_pitch": "<2-3 sentence elevator pitch connecting Mayank's unique blend of distributed backend reliability and cutting-edge GenAI agent engineering to this specific role>"
 }}
 
 EVALUATION RULES:

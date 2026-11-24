@@ -7,17 +7,17 @@ import {
 import { API_BASE } from '../config';
 
 const SUGGESTIONS_EN = [
-  "Can you describe Mayank's PetPuja project and its architecture?",
-  "What measurable optimizations did Mayank deliver at Cognizant?",
-  "How does Mayank implement Human-in-the-Loop (HITL) in LangGraph?",
-  "Summarize Mayank's backend & GenAI experience in 2 sentences."
+  "How does KahinPAY handle offline BLE mesh gossip and Redis idempotency?",
+  "What recent LeetCode questions has Mayank solved and which topics does he prefer?",
+  "Can you describe Mayank's PetPuja project and its LangGraph HITL architecture?",
+  "What measurable optimizations did Mayank deliver at Cognizant?"
 ];
 
 const SUGGESTIONS_HI = [
+  "KahinPAY ऑफलाइन BLE मेश गॉसिप और Redis इडेम्पोटेंसी कैसे संभालता है?",
+  "Mayank ने हाल ही में कौन-से LeetCode प्रश्न हल किए हैं और वे कौन-से DSA टॉपिक्स पसंद करते हैं?",
   "Mayank के PetPuja प्रोजेक्ट और उसके आर्किटेक्चर के बारे में बताएं?",
-  "Cognizant में Mayank ने कौन-सी प्रमुख उपलब्धियां और latency सुधार हासिल किए?",
-  "Mayank LangGraph में Human-in-the-Loop (HITL) कैसे लागू करते हैं?",
-  "Mayank का बैकएंड और GenAI अनुभव 2 वाक्यों में संक्षेप में बताएं।"
+  "Cognizant में Mayank ने कौन-सी प्रमुख उपलब्धियां और latency सुधार हासिल किए?"
 ];
 
 export default function ChatModal({ isOpen, onClose, initialQuery }) {
@@ -25,7 +25,7 @@ export default function ChatModal({ isOpen, onClose, initialQuery }) {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content: "Hello! I am Mayank Kanth's official AI Representative powered by **Groq** (`openai/gpt-oss-20b`). I can answer any questions about his backend microservices, LangGraph agent workflows, production metrics, or technical projects. What would you like to know?"
+      content: "Hello! I am Mayank Kanth's official AI Representative powered by **Groq** (`openai/gpt-oss-20b`). Ask me about his distributed microservices & SQL tuning at Cognizant, **KahinPAY** (Java 17/Spring Boot/Redis), **PetPuja** (LangGraph), or even his **live LeetCode stats & recently solved DSA problems**!"
     }
   ]);
   const [input, setInput] = useState("");

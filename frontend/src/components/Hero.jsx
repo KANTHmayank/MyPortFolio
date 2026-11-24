@@ -35,8 +35,8 @@ export default function Hero({ onOpenChat }) {
       </h1>
 
       <p className="hero-subtitle">
-        I am <strong>Mayank Kanth</strong>, a Computer Science professional with 1+ years of production experience 
-        delivering high-throughput <strong>Spring Boot</strong> backends and cutting-edge <strong>LangGraph & Groq</strong> agentic workflows.
+        I am <strong>Mayank Kanth</strong>, a Backend &amp; Generative AI Engineer with 1+ year of production experience 
+        optimizing <strong>distributed microservices &amp; SQL systems</strong>, and building full-stack platforms—from <strong>KahinPAY</strong> (Java 17, Spring Boot &amp; Redis) to <strong>LangGraph, FastAPI &amp; RAG</strong> AI agents.
       </p>
 
       {/* Clean, Non-Redundant Hero Actions */}
@@ -52,14 +52,25 @@ export default function Hero({ onOpenChat }) {
         </button>
 
         <a 
+          href="/Mayank_Resume_SDE.pdf" 
+          download="Mayank_Kanth_Backend_Resume.pdf" 
+          className="btn btn-secondary"
+          id="btn-hero-resume-sde"
+          title="Download Mayank's Backend / SDE Resume PDF"
+        >
+          <FileText size={18} />
+          <span>Backend Resume</span>
+        </a>
+
+        <a 
           href="/Mayank_Resume_AI.pdf" 
           download="Mayank_Kanth_AI_Resume.pdf" 
           className="btn btn-secondary"
           id="btn-hero-resume"
-          title="Download Mayank's Verified AI/GenAI Resume PDF"
+          title="Download Mayank's AI / GenAI Resume PDF"
         >
           <FileText size={18} />
-          <span>Resume PDF</span>
+          <span>AI Resume</span>
         </a>
       </div>
 
@@ -130,7 +141,7 @@ export default function Hero({ onOpenChat }) {
               </button>
 
               <a 
-                href="https://petpuja-928q.onrender.com/" 
+                href="https://pet-puja-three.vercel.app" 
                 target="_blank" 
                 rel="noreferrer"
                 className="btn btn-secondary btn-sm"

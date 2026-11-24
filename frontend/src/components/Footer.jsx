@@ -29,7 +29,8 @@ export default function Footer() {
             <li><a href="#projects">Featured Projects</a></li>
             <li><a href="#experience">Work Experience</a></li>
             <li><a href="#skills">Technical Competencies</a></li>
-            <li><a href="/Mayank_Resume__.pdf" download="Mayank_Kanth_Resume.pdf">Download Resume (PDF)</a></li>
+            <li><a href="/Mayank_Resume_SDE.pdf" download="Mayank_Kanth_Backend_Resume.pdf">Backend / SDE Resume (PDF)</a></li>
+            <li><a href="/Mayank_Resume_AI.pdf" download="Mayank_Kanth_AI_Resume.pdf">AI / GenAI Resume (PDF)</a></li>
           </ul>
         </div>
 

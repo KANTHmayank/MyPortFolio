@@ -33,7 +33,7 @@ def test_profile():
     assert response.status_code == 200, f"Expected 200, got {response.status_code}"
     data = response.json()
     assert data["personal"]["name"] == "Mayank Kanth"
-    assert len(data["projects"]) == 3
+    assert len(data["projects"]) >= 4
     assert len(data["work_experience"]) == 2
     print(f"Candidate: {data['personal']['name']}")
     print(f"Title: {data['personal']['title']}")

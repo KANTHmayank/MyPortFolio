@@ -91,7 +91,8 @@ aiportfolio/
 │   │   ├── App.css              # Bespoke modern dark theme styles
 │   │   └── index.css            # Design tokens, typography & animations
 │   ├── public/
-│   │   └── Mayank_Resume__.pdf  # Direct verified resume download
+│   │   ├── Mayank_Resume_AI.pdf   # Direct AI/GenAI resume download
+│   │   └── Mayank_Resume_SDE.pdf  # Direct Backend/SDE resume download
 │   ├── vercel.json              # Vercel deployment rewrite rules
 │   └── vite.config.js           # Vite dev server & backend API proxy
 ├── test_phase1.py               # Automated unit & security test suite for AI Persona
