@@ -44,7 +44,7 @@ export default function WhyHireModal({ isOpen, onClose, onOpenChatWithQuery }) {
     { label: "API Latency Reduction", val: "~28%", sub: "Microservices & REST API tuning at Cognizant" },
     { label: "SQL Query Speedup", val: "~40%", sub: "Index tuning on multi-million row tables" },
     { label: "MTTR Reduction", val: "~35%", sub: "Distributed tracing, Splunk & Postman" },
-    { label: "Production Uptime", val: "99.9%", sub: "Bi-weekly CI/CD releases & hotfixes" },
+    { label: "Production Uptime", val: "99.9%", sub: "Git CI/CD & AWS (EC2, S3, ELB) releases" },
     { label: "LeetCode Solved", val: `${lcTotal}+`, sub: `${lcDiff.Easy}E / ${lcDiff.Medium}M / ${lcDiff.Hard}H • ${lcTopics}` },
     { label: "Academic CGPA", val: "8.47", sub: "B.Tech Computer Science & Engineering" }
   ];
@@ -58,7 +58,7 @@ export default function WhyHireModal({ isOpen, onClose, onOpenChatWithQuery }) {
       items: [
         "1+ year of production engineering at Cognizant resolving 50+ defects across distributed microservices (~28% latency cut, ~40% SQL boost, ~35% MTTR reduction).",
         "Architected KahinPAY: an offline-first distributed UPI payment engine (Java 17, Spring Boot, Redis) with simulated BLE epidemic gossip, ECDSA + RSA-2048/AES-256-GCM encryption, and Redis SETNX idempotency.",
-        "Containerization with Docker, automated Git/Jenkins CI/CD pipelines, 99.9% production reliability, and daily AI-assisted velocity via Claude Code."
+        "Containerization with Docker, automated Git CI/CD pipelines across AWS (EC2, S3, ELB), 99.9% production reliability, and daily AI-assisted velocity via Claude Code."
       ],
       chatPrompt: "Detail Mayank's microservices & SQL optimizations at Cognizant and the distributed architecture of KahinPAY."
     },

@@ -143,7 +143,7 @@ def get_why_hire_data():
             {
                 "label": "Production Uptime",
                 "value": "99.9%",
-                "context": "Bi-weekly releases & urgent zero-downtime hotfixes via Git & Jenkins CI/CD"
+                "context": "Bi-weekly releases & urgent zero-downtime hotfixes via Git CI/CD in AWS (EC2, S3, ELB) environments"
             },
             {
                 "label": "LeetCode Problems",
@@ -165,7 +165,7 @@ def get_why_hire_data():
                 "points": [
                     "1+ year of hands-on production engineering at Cognizant resolving 50+ defects across a distributed microservices backend (~28% latency cut, ~40% SQL boost, ~35% MTTR drop).",
                     "Architected KahinPAY: an offline-first distributed UPI payment engine (Java 17, Spring Boot, Redis) with simulated BLE epidemic gossip, ECDSA + hybrid RSA-2048/AES-256-GCM encryption, and Redis SETNX idempotent settlement.",
-                    "Production discipline: Docker containerization, Git/Jenkins CI/CD releases, 99.9% reliability, and daily AI-assisted velocity with Claude Code."
+                    "Production discipline: Docker containerization, Git CI/CD pipelines across AWS (EC2, S3, ELB), 99.9% reliability, and daily AI-assisted velocity with Claude Code."
                 ]
             },
             {

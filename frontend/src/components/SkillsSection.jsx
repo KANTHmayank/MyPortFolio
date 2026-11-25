@@ -21,7 +21,7 @@ export default function SkillsSection() {
     {
       title: "Cloud, DevOps & Messaging",
       icon: <Cloud size={20} className="cat-icon icon-emerald" />,
-      skills: ["AWS (EC2, S3, ELB)", "Kafka", "Redis", "Git", "GitHub", "Jenkins CI/CD", "Docker"]
+      skills: ["AWS (EC2, S3, ELB)", "Kafka", "Redis", "Git", "GitHub", "CI/CD", "Docker"]
     },
     {
       title: "AI Assistants & Developer Tooling",

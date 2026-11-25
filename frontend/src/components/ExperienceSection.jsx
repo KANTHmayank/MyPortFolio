@@ -35,17 +35,17 @@ export default function ExperienceSection() {
           icon: <ShieldCheck size={18} className="metric-icon metric-amber" />,
           value: "99.9%",
           label: "Production Uptime",
-          subtext: "Zero-downtime releases via automated CI/CD"
+          subtext: "Git CI/CD & AWS (EC2, S3, ELB) deployments"
         }
       ],
       highlights: [
         "Resolved 50+ critical production defects across a distributed microservices backend and optimized REST API logic, reducing average response latency by ~28%.",
         "Tuned SQL queries and indexes on multi-million-row tables, improving query execution times by ~40% and eliminating downstream data inconsistencies.",
         "Traced and resolved integration issues across microservices using distributed tracing, Splunk, and Postman, reducing MTTR by ~35%.",
-        "Shipped bi-weekly releases and urgent hotfixes with DevOps and QA through a Git and Jenkins CI/CD pipeline, maintaining 99.9% system uptime.",
+        "Shipped bi-weekly releases and urgent hotfixes with DevOps and QA through a Git CI/CD pipeline, working with AWS services (EC2, S3, ELB) in the deployment environment while maintaining 99.9% system uptime.",
         "Used Claude Code daily for debugging, code analysis, and code generation to speed up defect diagnosis and understand unfamiliar modules."
       ],
-      skills: ["Java", "Microservices", "REST APIs", "MySQL", "Postman", "Splunk", "Distributed Tracing", "Git", "Jenkins", "Claude Code"]
+      skills: ["Java", "Microservices", "REST APIs", "MySQL", "AWS (EC2, S3, ELB)", "Postman", "Splunk", "Distributed Tracing", "Git", "Claude Code"]
     },
     {
       company: "Quy Technology Pvt. Ltd.",
